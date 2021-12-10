@@ -170,16 +170,16 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                         Secure login
                                     </h1>
                                     <div class="card p-4 rounded-plus bg-faded">
-                                        <form id="js-login" novalidate="" action="intel_analytics_dashboard.html">
+                                        <form id="js-login" novalidate="" action="<?php echo base_url('sing_in'); ?>" method="POST">
                                             <div class="form-group">
                                                 <label class="form-label" for="username">Username</label>
-                                                <input type="email" id="username" class="form-control form-control-lg" placeholder="Your Email" value="" required>
+                                                <input type="email" id="username" class="form-control form-control-lg" name="email" placeholder="Your Email" value="" required>
                                                 <div class="invalid-feedback">No, you missed this one.</div>
                                                 <div class="help-block">Your unique username to app</div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label" for="password">Password</label>
-                                                <input type="password" id="password" class="form-control form-control-lg" placeholder="Password" value="" required>
+                                                <input type="password" id="password" class="form-control form-control-lg" name="password" placeholder="Password" value="" required>
                                                 <div class="invalid-feedback">Sorry, you missed this one.</div>
                                                 <div class="help-block">Your password</div>
                                             </div>

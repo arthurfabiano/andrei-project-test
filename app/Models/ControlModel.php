@@ -8,8 +8,8 @@
         protected $table = 'users';
         protected $primaryKey = 'id';
 
-        protected $allowedFields = ['first_name', 'last_name', 'email', 'cpf', 'celular', 'razao_social', 'cnpj', 'site', 'social',
-                                    'password', 'perfil_id', 'produtora_id_wp', 'event_id', 'product_id'];
+        protected $allowedFields = ['perfil_id', 'first_name', 'last_name', 'email', 'password', 'celular', 'site', 'facebook',
+                                    'linkedin', 'status', 'created_at', 'updated_at', 'deleted_at'];
 
         protected $returnType       = 'array';
 

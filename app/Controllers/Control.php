@@ -19,7 +19,7 @@ class Control extends BaseController
         return view('login');
     }
     
-    public function login() 
+    public function sing_in() 
     {
         $dados = [
             'email'  => $this->request->getVar('email'),
@@ -28,32 +28,30 @@ class Control extends BaseController
 
         $result = $this->control->getLogin($dados);
 
-        
         if (count($result) >= 1) 
         {
             $setSession = [
                 'userID'        => $result[0]['id'],
                 'userName'      => $result[0]['first_name'],
                 'userEmail'     => $result[0]['email'],
-                'userPerfil'    => $result[0]['perfil_id'],
-                'produtoraID'   => $result[0]['produtora_id_wp'],
+                'userPerfil'    => $result[0]['profile_id'],
                 'isLogin'       => true
             ];
             $this->session->set($setSession);
 
-            return redirect()->to('/dashboard');
+            return redirect()->to('/home');
 
         } 
         else 
         {
-            return redirect()->to('/login');
+            return view('login');
         }
     }
 
     public function cadastrar()
     {
         if (empty($_POST)) {
-            return view('cadastrar');
+            return view('register');
         }
         else 
         {
@@ -61,10 +59,6 @@ class Control extends BaseController
                 'first_name'    => $this->request->getVar('first_name'),
                 'last_name'     => $this->request->getVar('last_name'),
                 'email'         => $this->request->getVar('email'),
-                'cpf'           => $this->request->getVar('cpf'),
-                'celular'       => $this->request->getVar('celular'),
-                'site'          => $this->request->getVar('site'),
-                'social'        => $this->request->getVar('social'),
                 'password'      => md5($this->request->getVar('password'))
             ];
             
@@ -75,7 +69,7 @@ class Control extends BaseController
             }
             else 
             {
-                return redirect()->to('/cadastrar');
+                return redirect()->to('/register');
             }
         }
         
@@ -83,7 +77,7 @@ class Control extends BaseController
 
     public function sair() {
         $this->session->destroy();
-        return redirect()->to('/login');
+        return view('login');
     }
 
 }

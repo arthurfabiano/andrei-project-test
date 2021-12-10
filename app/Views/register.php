@@ -154,27 +154,27 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 </div>
                                 <div class="col-xl-6 ml-auto mr-auto">
                                     <div class="card p-4 rounded-plus bg-faded">
-                                        <form id="js-login" novalidate="" action="intel_analytics_dashboard.html">
+                                        <form id="js-login" novalidate="" action="<?php echo base_url('register/user'); ?>" method="POST">
                                             <div class="form-group row">
                                                 <label class="col-xl-12 form-label" for="fname">Your first and last name</label>
                                                 <div class="col-6 pr-1">
-                                                    <input type="text" id="fname" class="form-control" placeholder="First Name" required>
+                                                    <input type="text" id="fname" class="form-control" name="first_name" placeholder="First Name" required>
                                                     <div class="invalid-feedback">No, you missed this one.</div>
                                                 </div>
                                                 <div class="col-6 pl-1">
-                                                    <input type="text" id="lname" class="form-control" placeholder="Last Name" required>
+                                                    <input type="text" id="lname" class="form-control" name="last_name" placeholder="Last Name" required>
                                                     <div class="invalid-feedback">No, you missed this one.</div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label" for="emailverify">Email will be needed for verification and account recovery</label>
-                                                <input type="email" id="emailverify" class="form-control" placeholder="Email for verification" required>
+                                                <input type="email" id="emailverify" class="form-control" name="email" placeholder="Email for verification" required>
                                                 <div class="invalid-feedback">No, you missed this one.</div>
                                                 <div class="help-block">Your email will also be your username</div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label" for="userpassword">Pick a password: <br>Don't reuse your bank password, we didn't spend a lot on security for this app.</label>
-                                                <input type="password" id="userpassword" class="form-control" placeholder="minimm 8 characters" required>
+                                                <input type="password" id="userpassword" class="form-control" name="password" placeholder="minimm 8 characters" required>
                                                 <div class="invalid-feedback">Sorry, you missed this one.</div>
                                                 <div class="help-block">Your password must be 8-10 characters long.</div>
                                             </div>

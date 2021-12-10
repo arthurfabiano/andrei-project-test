@@ -19,10 +19,10 @@ class Register extends BaseController
         return view('register');
     }
 
-    public function cadastrar()
+    public function user()
     {
         if (empty($_POST)) {
-            return view('cadastrar');
+            return view('register');
         }
         else 
         {
@@ -30,21 +30,17 @@ class Register extends BaseController
                 'first_name'    => $this->request->getVar('first_name'),
                 'last_name'     => $this->request->getVar('last_name'),
                 'email'         => $this->request->getVar('email'),
-                'cpf'           => $this->request->getVar('cpf'),
-                'celular'       => $this->request->getVar('celular'),
-                'site'          => $this->request->getVar('site'),
-                'social'        => $this->request->getVar('social'),
                 'password'      => md5($this->request->getVar('password'))
             ];
             
             $result = $this->control->save($newUser);
             if($result)
             {
-                return redirect()->to('/login');
+                return view('login');
             }
             else 
             {
-                return redirect()->to('/cadastrar');
+                return view('register');
             }
         }
         
