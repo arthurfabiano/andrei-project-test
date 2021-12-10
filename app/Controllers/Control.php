@@ -28,7 +28,7 @@ class Control extends BaseController
 
         $result = $this->control->getLogin($dados);
 
-        if (count($result) >= 1) 
+        if ($result != false && count($result) >= 1) 
         {
             $setSession = [
                 'userID'        => $result[0]['id'],
