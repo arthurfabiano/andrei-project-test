@@ -11,6 +11,7 @@
         <h1 class="subheader-title">
             <i class='subheader-icon fal fa-chart-area'></i> <?php echo $title; ?> - <span class='fw-300'><?php echo $sub_title; ?></span>
         </h1>
+
         <div class="subheader-block d-lg-flex align-items-center">
             <div class="d-flex mr-4">
                 <div class="mr-2">
@@ -32,6 +33,56 @@
             </div>
         </div>
     </div>
+
+    <?php  $session = \Config\Services::session(); if (!empty($session->getFlashdata('success'))) { ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                    <div class="d-flex align-items-center">
+                        <div class="alert-icon">
+                            <span class="icon-stack icon-stack-md">
+                                <i class="base-2 icon-stack-3x color-success-400"></i>
+                                <i class="base-10 text-white icon-stack-1x"></i>
+                                <i class="ni md-profile color-success-800 icon-stack-2x"></i>
+                            </span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="h4">Sucesso!</span>
+                            <br>
+                            <?php $session = \Config\Services::session(); echo $session->getFlashdata('success'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } else if (!empty($session->getFlashdata('error') !== null)) { ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                    <div class="d-flex align-items-center">
+                        <div class="alert-icon">
+                            <span class="icon-stack icon-stack-md">
+                                <i class="base-2 icon-stack-3x color-danger-400"></i>
+                                <i class="base-10 text-white icon-stack-1x"></i>
+                                <i class="ni md-profile color-danger-800 icon-stack-2x"></i>
+                            </span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="h4">Error!</span>
+                            <br>
+                            <?php $session = \Config\Services::session(); echo $session->getFlashdata('error'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
     
     <div class="row">
 
@@ -44,7 +95,7 @@
                 </div>
                 <div class="panel-container show">
                     <div class="panel-content">
-                        <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
+                    <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
                             <thead class="bg-warning-200">
                                 <tr>
                                     <th>#</th>
@@ -55,7 +106,7 @@
                                     <th>Site</th>
                                     <th>Facebook</th>
                                     <th>Linkedin</th>
-                                    <th></th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,9 +120,13 @@
                                         <td><?php echo $user['site']; ?></td>
                                         <td><?php echo $user['facebook']; ?></td>
                                         <td><?php echo $user['linkedin']; ?></td>
-                                        <td></td>
+                                        <td>
+                                            <a href='<?php echo base_url('user/delete') . '/' . $user['id']; ?>' data-toggle="modal" data-target="#deletarUsuario" onClick="deletarUsuario(<?php echo $user['id']; ?>)" class='btn btn-sm btn-icon btn-outline-danger rounded-circle mr-1' title='Delete User'><i class="fal fa-times"></i></a>
+                                            <a href='<?php echo base_url('user/edit') . '/' . $user['id']; ?>' class='btn btn-sm btn-icon btn-outline-primary rounded-circle mr-1' title='Edit User'><i class="fal fa-edit"></i></a>
+                                        </td>
                                     </tr>
                                 <?php } ?>
+                                
                             </tfoot>
                         </table>
                         <!-- datatable end -->

@@ -32,6 +32,58 @@
             </div>
         </div>
     </div>
+
+    <?php  $session = \Config\Services::session(); if (!empty($session->getFlashdata('success'))) { ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                    <div class="d-flex align-items-center">
+                        <div class="alert-icon">
+                            <span class="icon-stack icon-stack-md">
+                                <i class="base-2 icon-stack-3x color-success-400"></i>
+                                <i class="base-10 text-white icon-stack-1x"></i>
+                                <i class="ni md-profile color-success-800 icon-stack-2x"></i>
+                            </span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="h4">Sucesso!</span>
+                            <br>
+                            <?php $session = \Config\Services::session(); echo $session->getFlashdata('success'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } else if (!empty($session->getFlashdata('error') !== null)) { ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                    <div class="d-flex align-items-center">
+                        <div class="alert-icon">
+                            <span class="icon-stack icon-stack-md">
+                                <i class="base-2 icon-stack-3x color-danger-400"></i>
+                                <i class="base-10 text-white icon-stack-1x"></i>
+                                <i class="ni md-profile color-danger-800 icon-stack-2x"></i>
+                            </span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="h4">Error!</span>
+                            <br>
+                            <?php $session = \Config\Services::session(); echo $session->getFlashdata('error'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
+    
     <div class="row">
         <div class="col-sm-6 col-xl-3">
             <div class="p-3 bg-danger-300 rounded overflow-hidden position-relative text-white mb-g">
@@ -109,11 +161,11 @@
                                         <td><?php echo $key+1 ?></td>
                                         <td><?php echo $user['first_name']; ?></td>
                                         <td><?php echo $user['last_name']; ?></td>
-                                        <td><?php echo $user['email']; ?></td>
+                                        <td><a href="mailto:<?php echo $user['email']; ?>" target="_blank"><?php echo $user['email']; ?></a></td>
                                         <td><?php echo $user['cellphone']; ?></td>
-                                        <td><?php echo $user['site']; ?></td>
-                                        <td><?php echo $user['facebook']; ?></td>
-                                        <td><?php echo $user['linkedin']; ?></td>
+                                        <td><a href="https://<?php echo $user['site']; ?>" target="_blank"> <?php echo $user['site']; ?></a></td>
+                                        <td><a href="https://www.facebook.com/<?php echo $user['facebook']; ?>" target="_blank"><?php echo $user['facebook']; ?></a></td>
+                                        <td><a href="https://www.linkedin.com/in/<?php echo $user['linkedin']; ?>" target="_blank"><?php echo $user['linkedin']; ?></a></td>
                                         <td>
                                             <a href='<?php echo base_url('user/delete') . '/' . $user['id']; ?>' data-toggle="modal" data-target="#deletarUsuario" onClick="deletarUsuario(<?php echo $user['id']; ?>)" class='btn btn-sm btn-icon btn-outline-danger rounded-circle mr-1' title='Delete User'><i class="fal fa-times"></i></a>
                                             <a href='<?php echo base_url('user/edit') . '/' . $user['id']; ?>' class='btn btn-sm btn-icon btn-outline-primary rounded-circle mr-1' title='Edit User'><i class="fal fa-edit"></i></a>

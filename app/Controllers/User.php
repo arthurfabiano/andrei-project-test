@@ -7,6 +7,7 @@ class User extends BaseController
 {
 
     public function __construct() {
+        $this->session = \Config\Services::session();
         $this->control = new ControlModel();
     }
 
@@ -50,10 +51,12 @@ class User extends BaseController
             $result = $this->control->save($newUser);
             if($result)
             {
+                $this->session->setFlashdata('success', 'USUÁRIO CADASTRADO COM SUCESSO!');
                 return redirect()->to('/user/view');
             }
             else 
             {
+                $this->session->setFlashdata('error', 'USUÁRIO CADASTRADO COM SUCESSO!');
                 return redirect()->to('/user/register');
             }
         }
@@ -68,7 +71,6 @@ class User extends BaseController
             'page'         => "user/edit",
             'user'        => $this->control->getUser($id)
         ];
-
         return view('control', $dados);
         
     }
@@ -90,10 +92,12 @@ class User extends BaseController
         $result = $this->control->getUpdate($newUser);
         if($result)
         {
+            $this->session->setFlashdata('success', 'USUÁRIO ATUALIZADO COM SUCESSO!');
             return redirect()->to('/user/view');
         }
         else 
         {
+            $this->session->setFlashdata('success', 'USUÁRIO NÃO FOI ATUALIZADO TENTE NOVAMENTE!');
             return redirect()->to('/user/register');
         }
     }
@@ -105,10 +109,12 @@ class User extends BaseController
         $result = $this->control->getDelete($idUser);
         if($result)
         {
+            $this->session->setFlashdata('success', 'USUÁRIO DELETADO COM SUCESSO!');
             return redirect()->to('/user/view');
         }
         else 
         {
+            $this->session->setFlashdata('success', 'USUÁRIO NÃO FOI DELETADO TENTE NOVAMENTE!');
             return redirect()->to('/user/register');
         }        
     }

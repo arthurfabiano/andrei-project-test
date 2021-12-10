@@ -103,18 +103,11 @@
                             </a>
                         </div>
                         <ul id="js-nav-menu" class="nav-menu">
-                            <li class="active open">
-                                <a href="#" title="Application Intel" data-filter-tags="application intel">
+                            <li>
+                                <a href="<?php echo base_url('home'); ?>" title="Dashboard" data-filter-tags="application intel analytics dashboard">
                                     <i class="fal fa-info-circle"></i>
-                                    <span class="nav-link-text" data-i18n="nav.application_intel">Páginas</span>
+                                    <span class="nav-link-text" data-i18n="nav.application_intel_analytics_dashboard">Dashboard</span>
                                 </a>
-                                <ul>
-                                    <li class="active">
-                                        <a href="<?php echo base_url('home'); ?>" title="Analytics Dashboard" data-filter-tags="application intel analytics dashboard">
-                                            <span class="nav-link-text" data-i18n="nav.application_intel_analytics_dashboard">Dashboard</span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
                             
                             <li class="nav-title">Cadastros</li>                                
