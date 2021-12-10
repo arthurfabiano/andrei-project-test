@@ -129,15 +129,15 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                         <div class="d-flex align-items-center container p-0">
                             <div class="page-logo width-mobile-auto m-0 align-items-center justify-content-center p-0 bg-transparent bg-img-none shadow-0 height-9 border-0">
                                 <a href="javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
-                                    <img src="<?php echo base_url('img/logo.png'); ?>" alt="SmartAdmin WebApp" aria-roledescription="logo">
-                                    <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
+                                    <img src="<?php echo base_url('img/logo.png'); ?>" alt="Andrei - Project Test" aria-roledescription="logo">
+                                    <span class="page-logo-text mr-1">Andrei - Project Test</span>
                                 </a>
                             </div>
                             <span class="text-white opacity-50 ml-auto mr-2 hidden-sm-down">
                                 Already a member?
                             </span>
-                            <a href="page_login.html" class="btn-link text-white ml-auto ml-sm-0">
-                                Secure Login
+                            <a href="<?php echo base_url('/'); ?>" class="btn-link text-white ml-auto ml-sm-0">
+                                Login
                             </a>
                         </div>
                     </div>
@@ -146,18 +146,14 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                             <div class="row">
                                 <div class="col-xl-12">
                                     <h2 class="fs-xxl fw-500 mt-4 text-white text-center">
-                                        Register now, its free!
+                                        Register To Login
                                         <small class="h3 fw-300 mt-3 mb-5 text-white opacity-60 hidden-sm-down">
-                                            Your registration is free for a limited time. Enjoy SmartAdmin on your mobile, desktop or tablet.
-                                            <br>It is ready to go wherever you go!
+                                        Register to be able to log in and perform the tests on the system
                                         </small>
                                     </h2>
                                 </div>
                                 <div class="col-xl-6 ml-auto mr-auto">
                                     <div class="card p-4 rounded-plus bg-faded">
-                                        <div class="alert alert-primary text-dark" role="alert">
-                                            <strong>Heads Up!</strong> Due to server maintenance from 9:30GTA to 12GTA, the verification emails could be delayed by up to 10 minutes.
-                                        </div>
                                         <form id="js-login" novalidate="" action="intel_analytics_dashboard.html">
                                             <div class="form-group row">
                                                 <label class="col-xl-12 form-label" for="fname">Your first and last name</label>
@@ -180,22 +176,12 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                                 <label class="form-label" for="userpassword">Pick a password: <br>Don't reuse your bank password, we didn't spend a lot on security for this app.</label>
                                                 <input type="password" id="userpassword" class="form-control" placeholder="minimm 8 characters" required>
                                                 <div class="invalid-feedback">Sorry, you missed this one.</div>
-                                                <div class="help-block">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</div>
+                                                <div class="help-block">Your password must be 8-10 characters long.</div>
                                             </div>
-                                            <div class="form-group demo">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="terms" required>
-                                                    <label class="custom-control-label" for="terms"> I agree to terms & conditions</label>
-                                                    <div class="invalid-feedback">You must agree before proceeding</div>
-                                                </div>
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="newsletter">
-                                                    <label class="custom-control-label" for="newsletter">Sign up for newsletters (dont worry, we won't send so many)</label>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="row no-gutters">
                                                 <div class="col-md-4 ml-auto text-right">
-                                                    <button id="js-login-btn" type="submit" class="btn btn-block btn-danger btn-lg mt-3">Send verification</button>
+                                                    <button id="js-login-btn" type="submit" class="btn btn-block btn-danger btn-lg mt-3">Register</button>
                                                 </div>
                                             </div>
                                         </form>

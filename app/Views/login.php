@@ -129,11 +129,11 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                         <div class="d-flex align-items-center container p-0">
                             <div class="page-logo width-mobile-auto m-0 align-items-center justify-content-center p-0 bg-transparent bg-img-none shadow-0 height-9 border-0">
                                 <a href="javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
-                                    <img src="<?php echo base_url('img/logo.png'); ?>" alt="SmartAdmin WebApp" aria-roledescription="logo">
-                                    <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
+                                    <img src="<?php echo base_url('img/logo.png'); ?>" alt="Andrei - Project Test" aria-roledescription="logo">
+                                    <span class="page-logo-text mr-1">Andrei - Project Test</span>
                                 </a>
                             </div>
-                            <a href="page_register.html" class="btn-link text-white ml-auto">
+                            <a href="<?php echo base_url('register'); ?>" class="btn-link text-white ml-auto">
                                 Create Account
                             </a>
                         </div>
@@ -143,12 +143,11 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                             <div class="row">
                                 <div class="col col-md-6 col-lg-7 hidden-sm-down">
                                     <h2 class="fs-xxl fw-500 mt-4 text-white">
-                                        The simplest UI toolkit for developers &amp; programmers
+                                        Andrei &amp; Project test
                                         <small class="h3 fw-300 mt-3 mb-5 text-white opacity-60">
                                             Presenting you with the next level of innovative UX design and engineering. The most modular toolkit available with over 600+ layout permutations. Experience the simplicity of SmartAdmin, everywhere you go!
                                         </small>
                                     </h2>
-                                    <a href="#" class="fs-lg fw-500 text-white opacity-70">Learn more &gt;&gt;</a>
                                     <div class="d-sm-flex flex-column align-items-center justify-content-center d-md-block">
                                         <div class="px-0 py-1 mt-5 text-white fs-nano opacity-50">
                                             Find us on social media
@@ -156,9 +155,6 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                         <div class="d-flex flex-row opacity-70">
                                             <a href="#" class="mr-2 fs-xxl text-white">
                                                 <i class="fab fa-facebook-square"></i>
-                                            </a>
-                                            <a href="#" class="mr-2 fs-xxl text-white">
-                                                <i class="fab fa-twitter-square"></i>
                                             </a>
                                             <a href="#" class="mr-2 fs-xxl text-white">
                                                 <i class="fab fa-google-plus-square"></i>
@@ -177,28 +173,19 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                         <form id="js-login" novalidate="" action="intel_analytics_dashboard.html">
                                             <div class="form-group">
                                                 <label class="form-label" for="username">Username</label>
-                                                <input type="email" id="username" class="form-control form-control-lg" placeholder="your id or email" value="drlantern@gotbootstrap.com" required>
+                                                <input type="email" id="username" class="form-control form-control-lg" placeholder="Your Email" value="" required>
                                                 <div class="invalid-feedback">No, you missed this one.</div>
                                                 <div class="help-block">Your unique username to app</div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label" for="password">Password</label>
-                                                <input type="password" id="password" class="form-control form-control-lg" placeholder="password" value="password123" required>
+                                                <input type="password" id="password" class="form-control form-control-lg" placeholder="Password" value="" required>
                                                 <div class="invalid-feedback">Sorry, you missed this one.</div>
                                                 <div class="help-block">Your password</div>
                                             </div>
-                                            <div class="form-group text-left">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="rememberme">
-                                                    <label class="custom-control-label" for="rememberme"> Remember me for the next 30 days</label>
-                                                </div>
-                                            </div>
                                             <div class="row no-gutters">
-                                                <div class="col-lg-6 pr-lg-1 my-2">
-                                                    <button type="submit" class="btn btn-info btn-block btn-lg">Sign in with <i class="fab fa-google"></i></button>
-                                                </div>
                                                 <div class="col-lg-6 pl-lg-1 my-2">
-                                                    <button id="js-login-btn" type="submit" class="btn btn-danger btn-block btn-lg">Secure login</button>
+                                                    <button id="js-login-btn" type="submit" class="btn btn-danger btn-block btn-lg">Login</button>
                                                 </div>
                                             </div>
                                         </form>
