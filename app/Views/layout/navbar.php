@@ -66,35 +66,38 @@
                                     <div class="dropdown-header bg-trans-gradient d-flex justify-content-center align-items-center rounded-top">
                                         <h4 class="m-0 text-center color-white">
                                             Quick Shortcut
-                                            <small class="mb-0 opacity-80">Menu Rápido</small>
+                                            <small class="mb-0 opacity-80">Quick Menu</small>
                                         </h4>
                                     </div>
                                     <div class="custom-scroll h-100">
                                         <ul class="app-list">
+                                            <?php $this->session = \Config\Services::session(); if ($this->session->get('userPerfil') == 1) { ?>
                                             <li>
-                                                <a href="#" class="app-list-item hover-white">
+                                                <a href="<?php echo base_url('admin/painel'); ?>" class="app-list-item hover-white">
                                                     <span class="icon-stack">
                                                         <i class="base-2 icon-stack-3x color-primary-600"></i>
                                                         <i class="base-3 icon-stack-2x color-primary-700"></i>
                                                         <i class="ni ni-settings icon-stack-1x text-white fs-lg"></i>
                                                     </span>
                                                     <span class="app-list-name">
-                                                        Administrador
+                                                        Administrator
                                                     </span>
                                                 </a>
                                             </li>
+                                            <?php } else { ?>
                                             <li>
-                                                <a href="#" class="app-list-item hover-white">
+                                                <a href="<?php echo base_url('admin/perfil'); ?>" class="app-list-item hover-white">
                                                     <span class="icon-stack">
                                                         <i class="base-2 icon-stack-3x color-primary-400"></i>
                                                         <i class="base-10 text-white icon-stack-1x"></i>
                                                         <i class="ni md-profile color-primary-800 icon-stack-2x"></i>
                                                     </span>
                                                     <span class="app-list-name">
-                                                        Perfil
+                                                        Profile
                                                     </span>
                                                 </a>
                                             </li>
+                                            <?php } ?>
                                             <li class="w-100">
                                                 <a href="#" class="btn btn-default mt-4 mb-2 pr-5 pl-5"> Add more apps </a>
                                             </li>
@@ -122,15 +125,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="dropdown-divider m-0"></div>
-                                    <a href="<?php echo base_url('admin/perfil'); ?>" class="dropdown-item">
-                                        <span data-i18n="drpdwn.settings">Settings</span>
-                                    </a>
-                                    <div class="dropdown-divider m-0"></div>
-                                    <a href="#" class="dropdown-item" data-action="app-fullscreen">
-                                        <span data-i18n="drpdwn.fullscreen">Perfil</span>
-                                        <i class="float-right text-muted fw-n">F11</i>
-                                    </a>
                                     <div class="dropdown-divider m-0"></div>
                                     <a class="dropdown-item fw-500 pt-3 pb-3" href="<?php echo base_url('/logout'); ?>">
                                         <span data-i18n="drpdwn.page-logout">Logout</span>
