@@ -8,7 +8,7 @@
         protected $table = 'users';
         protected $primaryKey = 'id';
 
-        protected $allowedFields = ['perfil_id', 'first_name', 'last_name', 'email', 'password', 'celular', 'site', 'facebook',
+        protected $allowedFields = ['perfil_id', 'first_name', 'last_name', 'email', 'password', 'cellphone', 'site', 'facebook',
                                     'linkedin', 'status', 'created_at', 'updated_at', 'deleted_at'];
 
         protected $returnType       = 'array';
@@ -72,6 +72,7 @@
             $builder = $db->table('users');
             $builder->select('*');
             $builder->where('id !=', 1);
+            $builder->where('profile_id !=', 1);
             $query = $builder->get();
             return $query->getResultArray();
         }

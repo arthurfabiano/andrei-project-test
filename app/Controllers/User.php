@@ -2,10 +2,12 @@
 
 namespace App\Controllers;
 
+use App\Models\ControlModel;
 class User extends BaseController
 {
 
     public function __construct() {
+        $this->control = new ControlModel();
     }
 
     public function index()
@@ -13,7 +15,8 @@ class User extends BaseController
         $dados = [
             'title'        => 'Usuários',
             'sub_title'    => 'Lista dos Eventos Criados',
-            'page'         => "user/index"
+            'page'         => "user/index",
+            'users'        => $this->control->getUsers()
           ];
     
           return view('control', $dados);
@@ -21,13 +24,40 @@ class User extends BaseController
 
     public function register()
     {
-        $dados = [
-            'title'        => 'Cadastro de Usuários',
-            'sub_title'    => 'Página de Cadastro de Usuário',
-            'page'         => "user/register"
-          ];
-    
-          return view('control', $dados);
+        if (empty($_POST)) {
+            $dados = [
+                'title'        => 'Cadastro de Usuários',
+                'sub_title'    => 'Página de Cadastro de Usuário',
+                'page'         => "user/register",
+                'users'        => $this->control->getUsers()
+              ];
+        
+              return view('control', $dados);
+        }
+        else 
+        {
+            $newUser = [
+                'first_name'    => $this->request->getVar('first_name'),
+                'last_name'     => $this->request->getVar('last_name'),
+                'email'         => $this->request->getVar('email'),
+                'password'      => md5($this->request->getVar('password')),
+                'cellphone'     => $this->request->getVar('cellphone'),
+                'site'          => $this->request->getVar('site'),
+                'facebook'      => $this->request->getVar('facebook'),
+                'linkedin'      => $this->request->getVar('linkedin')
+            ];
+            
+            $result = $this->control->save($newUser);
+            if($result)
+            {
+                return redirect()->to('/user/view');
+            }
+            else 
+            {
+                return redirect()->to('/user/register');
+            }
+        }
+        
     }
 
     public function view()
@@ -35,7 +65,8 @@ class User extends BaseController
         $dados = [
             'title'        => 'Visualizar Usuários',
             'sub_title'    => 'Listas os Usuários Cadastrados Dentro do Sistema',
-            'page'         => "user/view"
+            'page'         => "user/view",
+            'users'        => $this->control->getUsers()
           ];
     
           return view('control', $dados);

@@ -92,61 +92,32 @@
                         <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
                             <thead class="bg-warning-200">
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Sobrenome</th>
+                                    <th>#</th>
+                                    <th>First name</th>
+                                    <th>Last Name</th>
                                     <th>Email</th>
+                                    <th>Cellphone</th>
+                                    <th>Site</th>
+                                    <th>Facebook</th>
+                                    <th>Linkedin</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>268410636</td>
-                                    <td>Cooley, Walker J.</td>
-                                    <td>03-13-19</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>268410636</td>
-                                    <td>Cooley, Walker J.</td>
-                                    <td>03-13-19</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>268410636</td>
-                                    <td>Cooley, Walker J.</td>
-                                    <td>03-13-19</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>268410636</td>
-                                    <td>Cooley, Walker J.</td>
-                                    <td>03-13-19</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>268410636</td>
-                                    <td>Cooley, Walker J.</td>
-                                    <td>03-13-19</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>268410636</td>
-                                    <td>Arthur</td>
-                                    <td>03-13-19</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>268410636</td>
-                                    <td>Cooley, Walker J.</td>
-                                    <td>03-13-19</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>268410636</td>
-                                    <td>Cooley, Walker J.</td>
-                                    <td>03-13-19</td>
-                                    <td></td>
-                                </tr>
+                                <?php foreach ($users as $key => $user) { ?>
+                                    <tr>
+                                        <td><?php echo $key+1 ?></td>
+                                        <td><?php echo $user['first_name']; ?></td>
+                                        <td><?php echo $user['last_name']; ?></td>
+                                        <td><?php echo $user['email']; ?></td>
+                                        <td><?php echo $user['cellphone']; ?></td>
+                                        <td><?php echo $user['site']; ?></td>
+                                        <td><?php echo $user['facebook']; ?></td>
+                                        <td><?php echo $user['linkedin']; ?></td>
+                                        <td></td>
+                                    </tr>
+                                <?php } ?>
+                                
                             </tfoot>
                         </table>
                         <!-- datatable end -->

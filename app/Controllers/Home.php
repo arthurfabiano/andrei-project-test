@@ -2,9 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Models\ControlModel;
 class Home extends BaseController
 {
     public function __construct() {
+        $this->control = new ControlModel();
     }
 
     public function index()
@@ -12,7 +14,8 @@ class Home extends BaseController
         $dados = [
             'title'        => 'Eventos',
             'sub_title'    => 'Lista dos Eventos Criados',
-            'page'         => "dashboard/index"
+            'page'         => "dashboard/index",
+            'users'        => $this->control->getUsers()
           ];
     
           return view('control', $dados);
