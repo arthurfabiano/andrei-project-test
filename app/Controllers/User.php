@@ -13,6 +13,10 @@ class User extends BaseController
 
     public function index()
     {
+        if ($this->session->get('isLogin') != true) {
+            return redirect()->to('/');
+        }
+
         $dados = [
             'title'        => 'Usuários',
             'sub_title'    => 'Lista dos Eventos Criados',
@@ -25,6 +29,10 @@ class User extends BaseController
 
     public function register()
     {
+        if ($this->session->get('isLogin') != true) {
+            return redirect()->to('/');
+        }
+
         if (empty($_POST)) {
             $dados = [
                 'title'        => 'Cadastro de Usuários',
@@ -65,6 +73,10 @@ class User extends BaseController
 
     public function edit($id)
     {
+        if ($this->session->get('isLogin') != true) {
+            return redirect()->to('/');
+        }
+
         $dados = [
             'title'        => 'Edição de Usuário',
             'sub_title'    => 'Página de Edição de Usuário',
@@ -78,6 +90,10 @@ class User extends BaseController
 
     public function update()
     {
+        if ($this->session->get('isLogin') != true) {
+            return redirect()->to('/');
+        }
+
         $newUser = [
             'first_name'    => $this->request->getVar('first_name'),
             'last_name'     => $this->request->getVar('last_name'),
@@ -105,6 +121,10 @@ class User extends BaseController
 
     public function delete()
     {
+        if ($this->session->get('isLogin') != true) {
+            return redirect()->to('/');
+        }
+
         $idUser = $this->request->getVar('id');
         
         $result = $this->control->getDelete($idUser);
@@ -122,6 +142,10 @@ class User extends BaseController
 
     public function view()
     {
+        if ($this->session->get('isLogin') != true) {
+            return redirect()->to('/');
+        }
+        
         $dados = [
             'title'        => 'Visualizar Usuários',
             'sub_title'    => 'Listas os Usuários Cadastrados Dentro do Sistema',

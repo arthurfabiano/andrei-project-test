@@ -5,6 +5,10 @@ namespace App\Controllers;
 class Admin extends BaseController
 {
     public function __construct() {
+        $this->session = \Config\Services::session();
+        if ($this->session->get('isLogin') != true) {
+            return view('login');
+        }
     }
 
     public function index()

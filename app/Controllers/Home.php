@@ -6,11 +6,15 @@ use App\Models\ControlModel;
 class Home extends BaseController
 {
     public function __construct() {
+        $this->session = \Config\Services::session();
         $this->control = new ControlModel();
     }
 
     public function index()
     {
+        if ($this->session->get('isLogin') != true) {
+            return redirect()->to('/');
+        }
         $dados = [
             'title'                 => 'Eventos',
             'sub_title'             => 'Lista dos Eventos Criados',
