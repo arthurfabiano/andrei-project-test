@@ -100,7 +100,7 @@
                                     <th>Site</th>
                                     <th>Facebook</th>
                                     <th>Linkedin</th>
-                                    <th></th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -114,7 +114,10 @@
                                         <td><?php echo $user['site']; ?></td>
                                         <td><?php echo $user['facebook']; ?></td>
                                         <td><?php echo $user['linkedin']; ?></td>
-                                        <td></td>
+                                        <td>
+                                            <a href='<?php echo base_url('user/delete') . '/' . $user['id']; ?>' class='btn btn-sm btn-icon btn-outline-danger rounded-circle mr-1' title='Delete User'><i class="fal fa-times"></i></a>
+                                            <a href='<?php echo base_url('user/edit') . '/' . $user['id']; ?>' class='btn btn-sm btn-icon btn-outline-primary rounded-circle mr-1' title='Edit User'><i class="fal fa-edit"></i></a>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                                 

@@ -60,6 +60,46 @@ class User extends BaseController
         
     }
 
+    public function edit($id)
+    {
+        $dados = [
+            'title'        => 'Edição de Usuário',
+            'sub_title'    => 'Página de Edição de Usuário',
+            'page'         => "user/edit",
+            'user'        => $this->control->getUser($id)
+        ];
+
+        return view('control', $dados);
+        
+    }
+
+    public function update()
+    {
+        $newUser = [
+            'first_name'    => $this->request->getVar('first_name'),
+            'last_name'     => $this->request->getVar('last_name'),
+            'email'         => $this->request->getVar('email'),
+            'password'      => md5($this->request->getVar('password')),
+            'cellphone'     => $this->request->getVar('cellphone'),
+            'site'          => $this->request->getVar('site'),
+            'facebook'      => $this->request->getVar('facebook'),
+            'linkedin'      => $this->request->getVar('linkedin'),
+            'id'        => $this->request->getVar('id')
+        ];
+        
+        $result = $this->control->getUpdate($newUser);
+        if($result)
+        {
+            return redirect()->to('/user/view');
+        }
+        else 
+        {
+            return redirect()->to('/user/register');
+        }
+        
+        
+    }
+
     public function view()
     {
         $dados = [

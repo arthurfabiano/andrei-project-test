@@ -43,6 +43,7 @@ $routes->get('/admin/perfil', 'Admin::perfil');
 $routes->get('/user', 'User::index');
 $routes->post('/user/register', 'User::register');
 $routes->get('/user/view', 'User::view');
+$routes->get('/user/update', 'User::view');
 
 /*
  * --------------------------------------------------------------------

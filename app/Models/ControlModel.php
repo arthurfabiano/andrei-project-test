@@ -76,4 +76,16 @@
             $query = $builder->get();
             return $query->getResultArray();
         }
+
+        public function getUpdate($dados) 
+        {
+            $db = db_connect('default');
+            $builder = $db->table('users');
+            $builder->select('*');
+            $builder->where('id =', $dados['id']);
+            $result = $builder->update($dados);
+            return $result;
+        }
+
+        
     }
