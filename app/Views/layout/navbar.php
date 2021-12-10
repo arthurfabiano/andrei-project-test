@@ -132,7 +132,7 @@
                                         <i class="float-right text-muted fw-n">F11</i>
                                     </a>
                                     <div class="dropdown-divider m-0"></div>
-                                    <a class="dropdown-item fw-500 pt-3 pb-3" href="page_login.html">
+                                    <a class="dropdown-item fw-500 pt-3 pb-3" href="<?php echo base_url('/logout'); ?>">
                                         <span data-i18n="drpdwn.page-logout">Logout</span>
                                         <span class="float-right fw-n">&commat;<?php $this->session = \Config\Services::session(); echo $this->session->get('first_name') . $this->session->get('last_name'); ?></span>
                                     </a>

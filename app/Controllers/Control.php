@@ -76,9 +76,9 @@ class Control extends BaseController
         
     }
 
-    public function sair() {
+    public function logout() {
         $this->session->destroy();
-        return view('login');
+        return redirect()->to('/');
     }
 
 }

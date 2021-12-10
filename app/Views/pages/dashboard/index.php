@@ -164,7 +164,7 @@
                                         <td><?php echo $user['last_name']; ?></td>
                                         <td><?php echo ($user['profile_id'] == 2) ? 'User' : 'Administrador'; ?></td>
                                         <td><a href="mailto:<?php echo $user['email']; ?>" target="_blank"><?php echo $user['email']; ?></a></td>
-                                        <td><?php echo $user['cellphone']; ?></td>
+                                        <td><a href="https://wa.me/<?php echo $user['cellphone']; ?>?text=Just+a+test+message%21" target="_blank"><?php echo $user['cellphone']; ?></td>
                                         <td><a href="https://<?php echo $user['site']; ?>" target="_blank"> <?php echo $user['site']; ?></a></td>
                                         <td><a href="https://www.facebook.com/<?php echo $user['facebook']; ?>" target="_blank"><?php echo $user['facebook']; ?></a></td>
                                         <td><a href="https://www.linkedin.com/in/<?php echo $user['linkedin']; ?>" target="_blank"><?php echo $user['linkedin']; ?></a></td>
