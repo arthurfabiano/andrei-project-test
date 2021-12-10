@@ -96,8 +96,21 @@ class User extends BaseController
         {
             return redirect()->to('/user/register');
         }
+    }
+
+    public function delete()
+    {
+        $idUser = $this->request->getVar('id');
         
-        
+        $result = $this->control->getDelete($idUser);
+        if($result)
+        {
+            return redirect()->to('/user/view');
+        }
+        else 
+        {
+            return redirect()->to('/user/register');
+        }        
     }
 
     public function view()

@@ -56,3 +56,10 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
 
 		>>> more settings are described inside documentation page >>>
 	-->
+
+
+    <script>
+      function deletarUsuario(id) {
+        document.getElementById('inputDeletarUsuario').value = id;
+      }
+    </script>

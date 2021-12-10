@@ -73,6 +73,7 @@
             $builder->select('*');
             $builder->where('id !=', 1);
             $builder->where('profile_id !=', 1);
+            $builder->where('status =', 1);
             $query = $builder->get();
             return $query->getResultArray();
         }
@@ -81,11 +82,18 @@
         {
             $db = db_connect('default');
             $builder = $db->table('users');
-            $builder->select('*');
             $builder->where('id =', $dados['id']);
             $result = $builder->update($dados);
             return $result;
         }
 
-        
+        public function getDelete($id) 
+        {
+            $db = db_connect('default');
+            $dados = ['status' => 0];
+            $builder = $db->table('users');
+            $builder->where('id =', $id);
+            $result = $builder->update($dados);
+            return $result;
+        }
     }

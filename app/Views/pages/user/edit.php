@@ -93,6 +93,7 @@
                             <hr>
                             
                             <input type="hidden" name="id" value="<?php echo $user->id; ?>">
+
                             <div class="row no-gutters">
                                 <div class="col-md-4 ml-auto text-right">
                                     <button id="js-login-btn" type="submit" class="btn btn-success btn-lg mt-3">Salve/Update</button>

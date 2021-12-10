@@ -115,7 +115,7 @@
                                         <td><?php echo $user['facebook']; ?></td>
                                         <td><?php echo $user['linkedin']; ?></td>
                                         <td>
-                                            <a href='<?php echo base_url('user/delete') . '/' . $user['id']; ?>' class='btn btn-sm btn-icon btn-outline-danger rounded-circle mr-1' title='Delete User'><i class="fal fa-times"></i></a>
+                                            <a href='<?php echo base_url('user/delete') . '/' . $user['id']; ?>' data-toggle="modal" data-target="#deletarUsuario" onClick="deletarUsuario(<?php echo $user['id']; ?>)" class='btn btn-sm btn-icon btn-outline-danger rounded-circle mr-1' title='Delete User'><i class="fal fa-times"></i></a>
                                             <a href='<?php echo base_url('user/edit') . '/' . $user['id']; ?>' class='btn btn-sm btn-icon btn-outline-primary rounded-circle mr-1' title='Edit User'><i class="fal fa-edit"></i></a>
                                         </td>
                                     </tr>
@@ -130,3 +130,31 @@
         </div>
     </div>
 </main>
+
+
+<div class="modal fade" id="deletarUsuario" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form id="js-login" novalidate="" action="<?php echo base_url('user/delete'); ?>" method="POST">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        DELETE USER?
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="modal-title h4 text-center">Are you sure you want to delete this user?<br/> This action cannot be undone.</h5>
+                </div>
+                
+                
+                    <input type="hidden" name="id" id="inputDeletarUsuario" value="">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary waves-effect waves-themed" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger waves-effect waves-themed">Delete</button>
+                    </div>
+            </div>
+        </form>
+    </div>
+</div>
