@@ -101,6 +101,7 @@
                                     <th>#</th>
                                     <th>First name</th>
                                     <th>Last Name</th>
+                                    <th>Profile</th>
                                     <th>Email</th>
                                     <th>Cellphone</th>
                                     <th>Site</th>
@@ -115,6 +116,7 @@
                                         <td><?php echo $key+1 ?></td>
                                         <td><?php echo $user['first_name']; ?></td>
                                         <td><?php echo $user['last_name']; ?></td>
+                                        <td><?php echo ($user['profile_id'] == 2) ? 'User' : 'Administrador'; ?></td>
                                         <td><?php echo $user['email']; ?></td>
                                         <td><?php echo $user['cellphone']; ?></td>
                                         <td><?php echo $user['site']; ?></td>

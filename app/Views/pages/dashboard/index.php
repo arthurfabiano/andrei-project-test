@@ -89,7 +89,7 @@
             <div class="p-3 bg-danger-300 rounded overflow-hidden position-relative text-white mb-g">
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
-                        21
+                        <?php echo $count_delete_users[0]['id']; ?>
                         <small class="m-0 l-h-n">Usuários Deletados</small>
                     </h3>
                 </div>
@@ -100,8 +100,8 @@
             <div class="p-3 bg-warning-400 rounded overflow-hidden position-relative text-white mb-g">
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
-                        10
-                        <small class="m-0 l-h-n">Usuários Alertas</small>
+                        <?php echo $count_facebook_users[0]['id']; ?>
+                        <small class="m-0 l-h-n">Usuários Com Facebook</small>
                     </h3>
                 </div>
                 <i class="fal fa-gem position-absolute pos-right pos-bottom opacity-15  mb-n1 mr-n4" style="font-size: 6rem;"></i>
@@ -111,7 +111,7 @@
             <div class="p-3 bg-success-200 rounded overflow-hidden position-relative text-white mb-g">
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
-                        35
+                        <?php echo $count_register_users[0]['id']; ?>
                         <small class="m-0 l-h-n">Usuários Cadastrados</small>
                     </h3>
                 </div>
@@ -122,8 +122,8 @@
             <div class="p-3 bg-info-200 rounded overflow-hidden position-relative text-white mb-g">
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
-                        15
-                        <small class="m-0 l-h-n">Usuários Pendentes</small>
+                        <?php echo $count_linkedin_users[0]['id']; ?>
+                        <small class="m-0 l-h-n">Usuários Com Likedin</small>
                     </h3>
                 </div>
                 <i class="fal fa-globe position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n4" style="font-size: 6rem;"></i>
@@ -147,6 +147,7 @@
                                     <th>#</th>
                                     <th>First name</th>
                                     <th>Last Name</th>
+                                    <th>Profile</th>
                                     <th>Email</th>
                                     <th>Cellphone</th>
                                     <th>Site</th>
@@ -161,6 +162,7 @@
                                         <td><?php echo $key+1 ?></td>
                                         <td><?php echo $user['first_name']; ?></td>
                                         <td><?php echo $user['last_name']; ?></td>
+                                        <td><?php echo ($user['profile_id'] == 2) ? 'User' : 'Administrador'; ?></td>
                                         <td><a href="mailto:<?php echo $user['email']; ?>" target="_blank"><?php echo $user['email']; ?></a></td>
                                         <td><?php echo $user['cellphone']; ?></td>
                                         <td><a href="https://<?php echo $user['site']; ?>" target="_blank"> <?php echo $user['site']; ?></a></td>

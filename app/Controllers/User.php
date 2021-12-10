@@ -71,6 +71,7 @@ class User extends BaseController
             'page'         => "user/edit",
             'user'        => $this->control->getUser($id)
         ];
+
         return view('control', $dados);
         
     }

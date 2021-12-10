@@ -69,11 +69,11 @@
         public function getUsers() 
         {
             $db = db_connect('default');
-            $builder = $db->table('users');
-            $builder->select('*');
-            $builder->where('id !=', 1);
-            $builder->where('profile_id !=', 1);
-            $builder->where('status =', 1);
+            $builder = $db->table('users u');
+            $builder->select('u.*, p.id as profileID');
+            $builder->join('profile p', 'p.id = u.profile_id');
+            $builder->where('u.profile_id !=', 1);
+            $builder->where('u.status =', 1);
             $query = $builder->get();
             return $query->getResultArray();
         }
@@ -95,5 +95,51 @@
             $builder->where('id =', $id);
             $result = $builder->update($dados);
             return $result;
+        }
+
+        public function getCountDeleteUsers()
+        {
+            $db = db_connect('default');
+            $builder = $db->table('users');
+            $builder->selectCount('id');
+            $builder->where('profile_id !=', 1);
+            $builder->where('status =', 0);
+            $query = $builder->get();
+            return $query->getResultArray();
+        }
+
+        public function getCountRegisterUsers()
+        {
+            $db = db_connect('default');
+            $builder = $db->table('users');
+            $builder->selectCount('id');
+            $builder->where('profile_id !=', 1);
+            $builder->where('status !=', 0);
+            $query = $builder->get();
+            return $query->getResultArray();
+        }
+
+        public function getCountFacebookUsers()
+        {
+            $db = db_connect('default');
+            $builder = $db->table('users');
+            $builder->selectCount('id');
+            $builder->where('profile_id =', 2);
+            $builder->where('facebook !=', "");
+            $builder->where('status =', 1);
+            $query = $builder->get();
+            return $query->getResultArray();
+        }
+
+        public function getCountLinkeginUsers()
+        {
+            $db = db_connect('default');
+            $builder = $db->table('users');
+            $builder->selectCount('id');
+            $builder->where('profile_id ', 2);
+            $builder->where('linkedin !=', "");
+            $builder->where('status =', 1);
+            $query = $builder->get();
+            return $query->getResultArray();
         }
     }
