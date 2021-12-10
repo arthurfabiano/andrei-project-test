@@ -44,7 +44,7 @@
                 </div>
                 <div class="panel-container show">
                     <div class="panel-content">
-                        <h1 class="text-center">Está página é acessada somento pelo usuario do sistema!</h1>
+                        <h1 class="text-center">Está página é acessada somento pelo administrador do sistema!</h1>
                     </div>
                 </div>
             </div>

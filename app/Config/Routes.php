@@ -39,6 +39,7 @@ $routes->get('/register/user', 'Register::user');
 
 $routes->get('/admin', 'Admin::index');
 $routes->get('/admin/perfil', 'Admin::perfil');
+$routes->get('/admin/painel', 'Admin::painel');
 
 $routes->get('/user', 'User::index');
 $routes->post('/user/register', 'User::register');

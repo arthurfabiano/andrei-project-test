@@ -28,4 +28,15 @@ class Admin extends BaseController
     
           return view('control', $dados);
     }
+
+    public function painel()
+    {
+        $dados = [
+            'title'        => 'Perfil de Usuário',
+            'sub_title'    => 'Cadastro de Perfil de Usuários',
+            'page'         => "admin/painel"
+          ];
+    
+          return view('control', $dados);
+    }
 }

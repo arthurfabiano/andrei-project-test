@@ -32,7 +32,8 @@ class Control extends BaseController
         {
             $setSession = [
                 'userID'        => $result[0]['id'],
-                'userName'      => $result[0]['first_name'],
+                'first_name'    => $result[0]['first_name'],
+                'last_name'     => $result[0]['last_name'],
                 'userEmail'     => $result[0]['email'],
                 'userPerfil'    => $result[0]['profile_id'],
                 'isLogin'       => true

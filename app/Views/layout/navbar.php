@@ -104,7 +104,7 @@
                             </div>
                             <!-- app user menu -->
                             <div>
-                                <a href="#" data-toggle="dropdown" title="arthur.masterdevelop@gmail.com" class="header-icon d-flex align-items-center justify-content-center ml-2">
+                                <a href="#" data-toggle="dropdown" title="<?php $this->session = \Config\Services::session(); echo $this->session->get('userEmail'); ?>" class="header-icon d-flex align-items-center justify-content-center ml-2">
                                     <img src="<?php echo base_url('img/demo/avatars/avatar-admin.png'); ?>" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
                                     <!-- you can also add username next to the avatar with the codes below:
 									<span class="ml-1 mr-1 text-truncate text-truncate-header hidden-xs-down">Me</span>
@@ -117,13 +117,13 @@
                                                 <img src="<?php echo base_url('img/demo/avatars/avatar-admin.png'); ?>" class="rounded-circle profile-image" alt="Dr. Codex Lantern">
                                             </span>
                                             <div class="info-card-text">
-                                                <div class="fs-lg text-truncate text-truncate-lg">Sr. Arthur Fabiano</div>
-                                                <span class="text-truncate text-truncate-md opacity-80">arthur.masterdevelop@gmail.com</span>
+                                                <div class="fs-lg text-truncate text-truncate-lg">Sr. <?php $this->session = \Config\Services::session(); echo $this->session->get('first_name') .' '. $this->session->get('last_name'); ?></div>
+                                                <span class="text-truncate text-truncate-md opacity-80"><?php $this->session = \Config\Services::session(); echo $this->session->get('userEmail'); ?></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="dropdown-divider m-0"></div>
-                                    <a href="#" class="dropdown-item" data-toggle="modal" data-target=".js-modal-settings">
+                                    <a href="<?php echo base_url('admin/perfil'); ?>" class="dropdown-item">
                                         <span data-i18n="drpdwn.settings">Settings</span>
                                     </a>
                                     <div class="dropdown-divider m-0"></div>
@@ -134,7 +134,7 @@
                                     <div class="dropdown-divider m-0"></div>
                                     <a class="dropdown-item fw-500 pt-3 pb-3" href="page_login.html">
                                         <span data-i18n="drpdwn.page-logout">Logout</span>
-                                        <span class="float-right fw-n">&commat;arthurfabiano</span>
+                                        <span class="float-right fw-n">&commat;<?php $this->session = \Config\Services::session(); echo $this->session->get('first_name') . $this->session->get('last_name'); ?></span>
                                     </a>
                                 </div>
                             </div>

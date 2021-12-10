@@ -92,7 +92,7 @@
                             <div class="info-card-text">
                                 <a href="#" class="d-flex align-items-center text-white">
                                     <span class="text-truncate text-truncate-sm d-inline-block">
-                                        Sr. Arthur Fabiano
+                                        Sr. <?php $this->session = \Config\Services::session(); echo $this->session->get('first_name') .' '. $this->session->get('last_name'); ?>
                                     </span>
                                 </a>
                                 <span class="d-inline-block text-truncate text-truncate-sm">Belo Hrzt. MG</span>
@@ -130,20 +130,39 @@
                                 </ul>
                             </li>
                             
-                            <li class="nav-title">Configurações</li>
-                            <li>
-                                <a href="#" title="Pages" data-filter-tags="pages">
-                                    <i class="fal fa-plus-circle"></i>
-                                    <span class="nav-link-text" data-i18n="nav.pages">Administrador</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="<?php echo base_url('admin/perfil'); ?>" title="Chat" data-filter-tags="pages chat">
-                                            <span class="nav-link-text" data-i18n="nav.pages_chat">Perfil</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                            <?php $this->session = \Config\Services::session(); if ($this->session->get('userPerfil') == 1) { ?>
+                                <li class="nav-title">Menu Administrador</li>
+                                <li>
+                                    <a href="#" title="Pages" data-filter-tags="pages">
+                                        <i class="fal fa-plus-circle"></i>
+                                        <span class="nav-link-text" data-i18n="nav.pages">Administrador</span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="<?php echo base_url('admin/painel'); ?>" title="Chat" data-filter-tags="pages chat">
+                                                <span class="nav-link-text" data-i18n="nav.pages_chat">Painel Administrador</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <?php } else { ?>
+                                <li class="nav-title">Menu Usuários</li>
+                                <li>
+                                    <a href="#" title="Pages" data-filter-tags="pages">
+                                        <i class="fal fa-plus-circle"></i>
+                                        <span class="nav-link-text" data-i18n="nav.pages">Acesso Usuário</span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="<?php echo base_url('admin/perfil'); ?>" title="Chat" data-filter-tags="pages chat">
+                                                <span class="nav-link-text" data-i18n="nav.pages_chat">Perfil</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <?php } ?>
+
+
                         </ul>
                         <div class="filter-message js-filter-message bg-success-600"></div>
                     </nav>
