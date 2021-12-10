@@ -14,8 +14,8 @@ class Admin extends BaseController
     public function index()
     {
         $dados = [
-            'title'        => 'Administração',
-            'sub_title'    => 'Página Inicial do Administrador',
+            'title'        => 'Administrator',
+            'sub_title'    => 'Administrator Home Page',
             'page'         => "admin/index"
           ];
     
@@ -25,8 +25,8 @@ class Admin extends BaseController
     public function perfil()
     {
         $dados = [
-            'title'        => 'Perfil de Usuário',
-            'sub_title'    => 'Cadastro de Perfil de Usuários',
+            'title'        => 'User Profile',
+            'sub_title'    => 'User Profile Registration',
             'page'         => "admin/perfil"
           ];
     
@@ -36,8 +36,8 @@ class Admin extends BaseController
     public function painel()
     {
         $dados = [
-            'title'        => 'Perfil de Usuário',
-            'sub_title'    => 'Cadastro de Perfil de Usuários',
+            'title'        => 'User Profile',
+            'sub_title'    => 'User Profile Registration',
             'page'         => "admin/painel"
           ];
     

@@ -90,7 +90,7 @@
             <div id="panel-4" class="panel">
                 <div class="panel-hdr">
                     <h2>
-                        Usuários <span class="fw-300"><i>Cadastrados</i></span>
+                        Registered <span class="fw-300"><i> users</i></span>
                     </h2>
                 </div>
                 <div class="panel-container show">
@@ -116,7 +116,7 @@
                                         <td><?php echo $key+1 ?></td>
                                         <td><?php echo $user['first_name']; ?></td>
                                         <td><?php echo $user['last_name']; ?></td>
-                                        <td><?php echo ($user['profile_id'] == 2) ? 'User' : 'Administrador'; ?></td>
+                                        <td><?php echo ($user['profile_id'] == 2) ? 'User' : 'Administrator'; ?></td>
                                         <td><?php echo $user['email']; ?></td>
                                         <td><?php echo $user['cellphone']; ?></td>
                                         <td><?php echo $user['site']; ?></td>

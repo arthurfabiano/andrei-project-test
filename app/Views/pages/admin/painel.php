@@ -39,7 +39,7 @@
             <div id="panel-4" class="panel">
                 <div class="panel-hdr">
                     <h2>
-                        Usuários <span class="fw-300"><i>Cadastrados</i></span>
+                        Admin <span class="fw-300"><i> Painel</i></span>
                     </h2>
                 </div>
                 <div class="panel-container show">

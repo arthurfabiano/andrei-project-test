@@ -39,12 +39,12 @@
             <div id="panel-4" class="panel">
                 <div class="panel-hdr">
                     <h2>
-                        Usuários <span class="fw-300"><i>Cadastrados</i></span>
+                        User <span class="fw-300"><i> Painel</i></span>
                     </h2>
                 </div>
                 <div class="panel-container show">
                     <div class="panel-content">
-                        <h1 class="text-center">Está página é acessada somento pelo usuario do sistema!</h1>
+                        <h1 class="text-center">This page is only accessed by the system user!</h1>
                     </div>
                 </div>
             </div>

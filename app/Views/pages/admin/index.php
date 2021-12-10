@@ -38,7 +38,7 @@
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
                         21
-                        <small class="m-0 l-h-n">Usuários Deletados</small>
+                        <small class="m-0 l-h-n">Deleted Users</small>
                     </h3>
                 </div>
                 <i class="fal fa-user position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:6rem"></i>
@@ -49,7 +49,7 @@
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
                         10
-                        <small class="m-0 l-h-n">Usuários Alertas</small>
+                        <small class="m-0 l-h-n">Alert Users</small>
                     </h3>
                 </div>
                 <i class="fal fa-gem position-absolute pos-right pos-bottom opacity-15  mb-n1 mr-n4" style="font-size: 6rem;"></i>
@@ -60,7 +60,7 @@
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
                         35
-                        <small class="m-0 l-h-n">Usuários Cadastrados</small>
+                        <small class="m-0 l-h-n">Registered users</small>
                     </h3>
                 </div>
                 <i class="fal fa-lightbulb position-absolute pos-right pos-bottom opacity-15 mb-n5 mr-n6" style="font-size: 8rem;"></i>
@@ -71,7 +71,7 @@
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
                         15
-                        <small class="m-0 l-h-n">Usuários Pendentes</small>
+                        <small class="m-0 l-h-n">Pending Users</small>
                     </h3>
                 </div>
                 <i class="fal fa-globe position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n4" style="font-size: 6rem;"></i>

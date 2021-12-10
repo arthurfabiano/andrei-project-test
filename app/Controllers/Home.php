@@ -16,8 +16,8 @@ class Home extends BaseController
             return redirect()->to('/');
         }
         $dados = [
-            'title'                 => 'Eventos',
-            'sub_title'             => 'Lista dos Eventos Criados',
+            'title'                 => 'Dashboard',
+            'sub_title'             => 'System Main Screen',
             'page'                  => "dashboard/index",
             'users'                 => $this->control->getUsers(),
             'count_delete_users'    => $this->control->getCountDeleteUsers(),

@@ -18,8 +18,8 @@ class User extends BaseController
         }
 
         $dados = [
-            'title'        => 'Usuários',
-            'sub_title'    => 'Lista dos Eventos Criados',
+            'title'        => 'Users',
+            'sub_title'    => 'List of Created Events',
             'page'         => "user/index",
             'users'        => $this->control->getUsers()
           ];
@@ -35,8 +35,8 @@ class User extends BaseController
 
         if (empty($_POST)) {
             $dados = [
-                'title'        => 'Cadastro de Usuários',
-                'sub_title'    => 'Página de Cadastro de Usuário',
+                'title'        => 'User Registration',
+                'sub_title'    => 'User Registration Page',
                 'page'         => "user/register",
                 'users'        => $this->control->getUsers()
               ];
@@ -59,12 +59,12 @@ class User extends BaseController
             $result = $this->control->save($newUser);
             if($result)
             {
-                $this->session->setFlashdata('success', 'USUÁRIO CADASTRADO COM SUCESSO!');
+                $this->session->setFlashdata('success', 'USER REGISTERED SUCCESSFULLY!');
                 return redirect()->to('/user/view');
             }
             else 
             {
-                $this->session->setFlashdata('error', 'USUÁRIO CADASTRADO COM SUCESSO!');
+                $this->session->setFlashdata('error', 'ERROR REGISTERING THE USER!');
                 return redirect()->to('/user/register');
             }
         }
@@ -78,8 +78,8 @@ class User extends BaseController
         }
 
         $dados = [
-            'title'        => 'Edição de Usuário',
-            'sub_title'    => 'Página de Edição de Usuário',
+            'title'        => 'User Edition',
+            'sub_title'    => 'User Edit Page',
             'page'         => "user/edit",
             'user'        => $this->control->getUser($id)
         ];
@@ -109,12 +109,12 @@ class User extends BaseController
         $result = $this->control->getUpdate($newUser);
         if($result)
         {
-            $this->session->setFlashdata('success', 'USUÁRIO ATUALIZADO COM SUCESSO!');
+            $this->session->setFlashdata('success', 'USER UPDATED SUCCESSFULLY!');
             return redirect()->to('/user/view');
         }
         else 
         {
-            $this->session->setFlashdata('success', 'USUÁRIO NÃO FOI ATUALIZADO TENTE NOVAMENTE!');
+            $this->session->setFlashdata('success', 'USER NOT UPDATED TRY AGAIN!');
             return redirect()->to('/user/register');
         }
     }
@@ -130,12 +130,12 @@ class User extends BaseController
         $result = $this->control->getDelete($idUser);
         if($result)
         {
-            $this->session->setFlashdata('success', 'USUÁRIO DELETADO COM SUCESSO!');
+            $this->session->setFlashdata('success', 'USER DELETED SUCCESSFULLY!');
             return redirect()->to('/user/view');
         }
         else 
         {
-            $this->session->setFlashdata('success', 'USUÁRIO NÃO FOI DELETADO TENTE NOVAMENTE!');
+            $this->session->setFlashdata('success', 'USER NOT DELETED TRY AGAIN!');
             return redirect()->to('/user/register');
         }        
     }
@@ -147,8 +147,8 @@ class User extends BaseController
         }
         
         $dados = [
-            'title'        => 'Visualizar Usuários',
-            'sub_title'    => 'Listas os Usuários Cadastrados Dentro do Sistema',
+            'title'        => 'View Users',
+            'sub_title'    => 'Lists of Registered Users within the System',
             'page'         => "user/view",
             'users'        => $this->control->getUsers()
           ];

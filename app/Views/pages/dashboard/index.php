@@ -9,7 +9,7 @@
     </ol>
     <div class="subheader">
         <h1 class="subheader-title">
-            <i class='subheader-icon fal fa-chart-area'></i> Dashboard <span class='fw-300'>Geral</span>
+            <i class='subheader-icon fal fa-chart-area'></i> <?php echo $title; ?> - <span class='fw-300'><?php echo $sub_title; ?></span>
         </h1>
         <div class="subheader-block d-lg-flex align-items-center">
             <div class="d-flex mr-4">
@@ -90,7 +90,7 @@
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
                         <?php echo $count_delete_users[0]['id']; ?>
-                        <small class="m-0 l-h-n">Usuários Deletados</small>
+                        <small class="m-0 l-h-n">Deleted Users</small>
                     </h3>
                 </div>
                 <i class="fal fa-user position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:6rem"></i>
@@ -101,7 +101,7 @@
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
                         <?php echo $count_facebook_users[0]['id']; ?>
-                        <small class="m-0 l-h-n">Usuários Com Facebook</small>
+                        <small class="m-0 l-h-n">Users With Facebook</small>
                     </h3>
                 </div>
                 <i class="fal fa-gem position-absolute pos-right pos-bottom opacity-15  mb-n1 mr-n4" style="font-size: 6rem;"></i>
@@ -112,7 +112,7 @@
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
                         <?php echo $count_register_users[0]['id']; ?>
-                        <small class="m-0 l-h-n">Usuários Cadastrados</small>
+                        <small class="m-0 l-h-n">Registered Users</small>
                     </h3>
                 </div>
                 <i class="fal fa-lightbulb position-absolute pos-right pos-bottom opacity-15 mb-n5 mr-n6" style="font-size: 8rem;"></i>
@@ -123,7 +123,7 @@
                 <div class="">
                     <h3 class="display-4 d-block l-h-n m-0 fw-500">
                         <?php echo $count_linkedin_users[0]['id']; ?>
-                        <small class="m-0 l-h-n">Usuários Com Likedin</small>
+                        <small class="m-0 l-h-n">Users With Likedin</small>
                     </h3>
                 </div>
                 <i class="fal fa-globe position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n4" style="font-size: 6rem;"></i>
@@ -136,7 +136,7 @@
             <div id="panel-4" class="panel">
                 <div class="panel-hdr">
                     <h2>
-                        Usuários <span class="fw-300"><i>Cadastrados</i></span>
+                        Registered <span class="fw-300"><i>users</i></span>
                     </h2>
                 </div>
                 <div class="panel-container show">

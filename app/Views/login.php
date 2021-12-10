@@ -144,22 +144,19 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                                 <div class="col col-md-6 col-lg-7 hidden-sm-down">
                                     <h2 class="fs-xxl fw-500 mt-4 text-white">
                                         Andrei &amp; Project test
-                                        <small class="h3 fw-300 mt-3 mb-5 text-white opacity-60">
-                                            Presenting you with the next level of innovative UX design and engineering. The most modular toolkit available with over 600+ layout permutations. Experience the simplicity of SmartAdmin, everywhere you go!
-                                        </small>
                                     </h2>
                                     <div class="d-sm-flex flex-column align-items-center justify-content-center d-md-block">
                                         <div class="px-0 py-1 mt-5 text-white fs-nano opacity-50">
                                             Find us on social media
                                         </div>
                                         <div class="d-flex flex-row opacity-70">
-                                            <a href="#" class="mr-2 fs-xxl text-white">
+                                            <a href="https://facebook.com" class="mr-2 fs-xxl text-white">
                                                 <i class="fab fa-facebook-square"></i>
                                             </a>
-                                            <a href="#" class="mr-2 fs-xxl text-white">
+                                            <a href="https://google.com" class="mr-2 fs-xxl text-white">
                                                 <i class="fab fa-google-plus-square"></i>
                                             </a>
-                                            <a href="#" class="mr-2 fs-xxl text-white">
+                                            <a href="https://linkedin.com" class="mr-2 fs-xxl text-white">
                                                 <i class="fab fa-linkedin"></i>
                                             </a>
                                         </div>
